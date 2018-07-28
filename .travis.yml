@@ -48,6 +48,7 @@ script:
 
 # Ballerina Kafka Connector
 - KAFKA_CONNECTOR_VERSION="${CONNECTOR_VERSION:-0.97.0}"
+
 - KAFKA_CONNECTOR_DISTRIBUTION=wso2-kafka-$KAFKA_CONNECTOR_VERSION
 
 - wget https://github.com/wso2-ballerina/package-kafka/releases/download/v$KAFKA_CONNECTOR_VERSION/$KAFKA_CONNECTOR_DISTRIBUTION.zip
@@ -56,6 +57,9 @@ script:
 
 - cp $KAFKA_CONNECTOR_DISTRIBUTION/dependencies/wso2-kafka-package-$KAFKA_CONNECTOR_VERSION.jar $DISTRIBUTION_NAME/bre/lib
 - cp -R $KAFKA_CONNECTOR_DISTRIBUTION/balo/wso2 $DISTRIBUTION_NAME/lib/repo
+
+- ls $DISTRIBUTION_NAME/lib/repo
+- ls $DISTRIBUTION_NAME/lib/repo/wso2
 
 - cd guide
 
